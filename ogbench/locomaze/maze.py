@@ -390,7 +390,7 @@ def make_maze_env(loco_env_type, maze_env_type, *args, **kwargs):
             if render_goal:
                 info['goal_rendered'] = goal_rendered
 
-            return ob
+            return ob, info
 
         def step(self, action):
             ob, reward, terminated, truncated, info = super().step(action)
