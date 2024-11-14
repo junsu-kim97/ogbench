@@ -627,7 +627,7 @@ def make_maze_env(loco_env_type, maze_env_type, *args, **kwargs):
                 info['success'] = 0.0
                 reward = 0.0
 
-            return ob, reward, terminated, info
+            return ob, reward, terminated, truncated, info
 
         def get_agent_ball_xy(self):
             agent_xy = self.data.qpos[:2].copy()
