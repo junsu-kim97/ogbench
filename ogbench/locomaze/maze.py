@@ -390,7 +390,7 @@ def make_maze_env(loco_env_type, maze_env_type, *args, **kwargs):
             if render_goal:
                 info['goal_rendered'] = goal_rendered
 
-            return ob, info
+            return ob
 
         def step(self, action):
             ob, reward, terminated, truncated, info = super().step(action)
@@ -627,7 +627,7 @@ def make_maze_env(loco_env_type, maze_env_type, *args, **kwargs):
                 info['success'] = 0.0
                 reward = 0.0
 
-            return ob, reward, terminated, truncated, info
+            return ob, reward, terminated, info
 
         def get_agent_ball_xy(self):
             agent_xy = self.data.qpos[:2].copy()
